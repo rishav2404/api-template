@@ -1,0 +1,43 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "testing purpose",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "prettier": "prettier --write 'src/**/**.ts'",
+    "start:dev": "rimraf dist && tsc && nodemon -r dotenv/config -q -w dist dist/index.js",
+    "start": "node -r dotenv/config -q -w dist dist/index.js",
+    "lint": "eslint src",
+    "lint:fix": "npm run lint -- --fix",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'npm run build && node dist/index.js'"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^4.17.21",
+    "@types/helmet": "^0.0.48",
+    "@types/luxon": "^3.4.2",
+    "@types/node": "^22.7.5",
+    "@typescript-eslint/eslint-plugin": "^7.13.0",
+    "@typescript-eslint/parser": "^7.13.0",
+    "dayjs": "^1.11.11",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.2",
+    "rimraf": "^5.0.7",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.17.21",
+    "express-http-context": "^1.2.4",
+    "helmet": "^8.0.0",
+    "luxon": "^3.5.0",
+    "winston": "^3.17.0"
+  }
+}
